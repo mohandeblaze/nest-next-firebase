@@ -1,4 +1,4 @@
-# NEST-NEXT-FIREBASE EXAMPLE
+# Nest.js + Next.js + Firebase
 
 An example or boilerplate for combining 3 technologies together Next.js, Nest.js and Firebase functions and hosting.
 
@@ -19,6 +19,6 @@ An example or boilerplate for combining 3 technologies together Next.js, Nest.js
 - You can check and test this production build in local by running `npm run firebase:local` to emulate how you app will run in Firebase functions and hosting.
 - Finally, to deploy it to Firebase functions and hosting run `npm run firebase:deploy`.
 
-> Before deploy change the project id in .firebaserc file to your firebase project ID.
+> Before deploy or firebase serve, change the project ID in .firebaserc file to your firebase project ID or else the build will get failed.
 
 > This app is fork of [nest-next package example](https://github.com/kyle-mccarthy/nest-next/tree/master/example) and modified it to work with firebase functions and hosting.
