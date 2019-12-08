@@ -1,0 +1,43 @@
+{
+  "name": "nestnextfirebase",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "license": "MIT",
+  "engines": {
+    "node": "8"
+  },
+  "scripts": {
+    "dev": "npm run build:clean && cross-env NODE_ENV=development nest start --watch -p tsconfig.dev.json",
+    "build:clean": "rimraf .next && rimraf dist && rimraf ../public/_next/static",
+    "build:public": "shx mv .next/static/ ../public/_next/static/",
+    "build:ui": "npx next build",
+    "build:server": "npx tsc --project tsconfig.prod.json",
+    "build": "npm run build:clean && npm run build:ui && npm run build:server && npm run build:public",
+    "firebase:local": "npm run build && npm run firebase:serve",
+    "firebase:serve": "firebase serve --only functions,hosting",
+    "firebase:deploy": "firebase deploy --only functions,hosting"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.5.3",
+    "@nestjs/core": "^6.5.3",
+    "@nestjs/platform-express": "^6.5.3",
+    "firebase-admin": "^8.8.0",
+    "firebase-functions": "^3.3.0",
+    "nest-next": "^9.1.0",
+    "next": "^9.0.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@types/node": "^12.7.1",
+    "@types/react": "^16.9.1",
+    "cross-env": "^6.0.3",
+    "shx": "^0.3.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  }
+}
